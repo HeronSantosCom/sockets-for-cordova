@@ -20,9 +20,10 @@
                 <param name="android-package" value="cz.blocshop.socketsforcordova.SocketPlugin"/>
             </feature>
         </config-file>
-		<config-file target="AndroidManifest.xml" parent="/manifest">
-            <uses-permission android:name="android.permission.INTERNET" />
-        </config-file>  
+		<!-- android.permission.INTERNET nao e declarado aqui de proposito: varios plugins
+             declaravam a mesma permissao, e o merge de manifest (Cordova + Android Gradle
+             Plugin) e nao-deterministico com mais de uma fonte. Fonte unica e autoritativa:
+             cordova-plugin-clisitef. -->
 		<source-file src="src/android/src/cz/blocshop/socketsforcordova/Logging.java" target-dir="src/cz/blocshop/socketsforcordova" />
         <source-file src="src/android/src/cz/blocshop/socketsforcordova/Consumer.java" target-dir="src/cz/blocshop/socketsforcordova" />
 		<source-file src="src/android/src/cz/blocshop/socketsforcordova/SocketAdapter.java" target-dir="src/cz/blocshop/socketsforcordova" />
